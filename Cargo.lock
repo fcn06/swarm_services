@@ -27,7 +27,7 @@ dependencies = [
 [[package]]
 name = "agent_core"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#2a7a2f383dfc239400f41f71dabd0efdcf7052a2"
+source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
 dependencies = [
  "a2a-rs",
  "agent_models",
@@ -112,7 +112,7 @@ dependencies = [
 [[package]]
 name = "agent_models"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#2a7a2f383dfc239400f41f71dabd0efdcf7052a2"
+source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
 dependencies = [
  "anyhow",
  "serde",
@@ -472,7 +472,7 @@ checksum = "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
 [[package]]
 name = "configuration"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#2a7a2f383dfc239400f41f71dabd0efdcf7052a2"
+source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
 dependencies = [
  "anyhow",
  "serde",
@@ -1301,7 +1301,7 @@ checksum = "6373607a59f0be73a39b6fe456b8192fcc3585f602af20751600e974dd455e77"
 [[package]]
 name = "llm_api"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#2a7a2f383dfc239400f41f71dabd0efdcf7052a2"
+source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
 dependencies = [
  "anyhow",
  "regex",
@@ -2279,9 +2279,9 @@ checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
 
 [[package]]
 name = "syn"
-version = "2.0.110"
+version = "2.0.111"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a99801b5bd34ede4cf3fc688c5919368fea4e4814a4664359503e6015b280aea"
+checksum = "390cc9a294ab71bdb1aa2e99d13be9c753cd2d7bd6560c77118597410c4d2e87"
 dependencies = [
  "proc-macro2",
  "quote",
