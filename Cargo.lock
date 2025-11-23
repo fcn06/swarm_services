@@ -27,7 +27,7 @@ dependencies = [
 [[package]]
 name = "agent_core"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
+source = "git+https://github.com/fcn06/swarm_commons.git#544315740bb77eeaf0aef9c647498dd19482738c"
 dependencies = [
  "a2a-rs",
  "agent_models",
@@ -112,7 +112,7 @@ dependencies = [
 [[package]]
 name = "agent_models"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
+source = "git+https://github.com/fcn06/swarm_commons.git#544315740bb77eeaf0aef9c647498dd19482738c"
 dependencies = [
  "anyhow",
  "serde",
@@ -472,7 +472,7 @@ checksum = "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
 [[package]]
 name = "configuration"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
+source = "git+https://github.com/fcn06/swarm_commons.git#544315740bb77eeaf0aef9c647498dd19482738c"
 dependencies = [
  "anyhow",
  "serde",
@@ -1301,7 +1301,7 @@ checksum = "6373607a59f0be73a39b6fe456b8192fcc3585f602af20751600e974dd455e77"
 [[package]]
 name = "llm_api"
 version = "0.1.0"
-source = "git+https://github.com/fcn06/swarm.git#ae4b4598d369f66b8b59db90216f47a18bd702e0"
+source = "git+https://github.com/fcn06/swarm_commons.git#544315740bb77eeaf0aef9c647498dd19482738c"
 dependencies = [
  "anyhow",
  "regex",
