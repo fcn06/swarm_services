@@ -13,7 +13,7 @@ use crate::evaluation_server::judge_agent::JudgeAgent;
 use configuration::AgentConfig;
 use redb::{Database, TableDefinition, ReadableTable, ReadableDatabase};
 
-
+const EVALUATION_DATABASE_PATH: &str = "./database/evaluation_db.redb";
 const EVALUATIONS_TABLE: TableDefinition<&str, Vec<u8>> = TableDefinition::new("evaluations");
 
 /// Application state holding evaluation data.
@@ -34,7 +34,7 @@ impl EvaluationServer {
         let judge_agent=JudgeAgent::new(agent_config.clone(),agent_api_key).await?;
 
         // Initialize redb
-        let db = Arc::new(Database::create("evaluation_db.redb")?);
+        let db = Arc::new(Database::create(EVALUATION_DATABASE_PATH)?);
         {
             let write_txn = db.begin_write()?;
             {
