@@ -33,6 +33,13 @@ impl EvaluationServer {
     pub async fn new(uri:String, agent_config: AgentConfig,  agent_api_key:String) -> anyhow::Result<Self> {
         let judge_agent=JudgeAgent::new(agent_config.clone(),agent_api_key).await?;
 
+        // Ensure parent directory exists
+        if let Some(parent) = std::path::Path::new(EVALUATION_DATABASE_PATH).parent() {
+            if !parent.as_os_str().is_empty() {
+                std::fs::create_dir_all(parent)?;
+            }
+        }
+
         // Initialize redb
         let db = Arc::new(Database::create(EVALUATION_DATABASE_PATH)?);
         {
