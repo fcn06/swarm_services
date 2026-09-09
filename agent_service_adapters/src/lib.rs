@@ -8,7 +8,7 @@ use agent_models::evaluation::evaluation_models::{AgentEvaluationLogData,JudgeEv
 use agent_memory_service::memory_service_client::agent_memory_client::AgentMemoryServiceClient;
 
 //use agent_memory_service::models::Role;
-use agent_models::memory::memory_models::Role;
+use agent_models::memory::memory_models::{FactItem, LogEntry, MemoryQuery, Role};
 
 use agent_core::business_logic::services::{EvaluationService, MemoryService, DiscoveryService};
 
@@ -59,6 +59,21 @@ impl AgentMemoryServiceAdapter {
 impl MemoryService for AgentMemoryServiceAdapter {
     async fn log(&self, conversation_id: String, role: Role, text: String, agent_name: Option<String>) -> Result<()> {
         self.client.log(conversation_id, role, text, agent_name).await.map(|_| ())
+    }
+
+    async fn get_conversation(&self, conversation_id: &str, limit: Option<usize>) -> Result<Vec<LogEntry>> {
+        self.client
+            .get_conversation_with_limit(conversation_id, limit)
+            .await
+            .map(|opt| opt.unwrap_or_default())
+    }
+
+    async fn recall_facts(&self, query: &MemoryQuery) -> Result<Vec<FactItem>> {
+        self.client.recall_facts(query).await
+    }
+
+    async fn store_fact(&self, fact: &FactItem) -> Result<()> {
+        self.client.store_fact(fact).await.map(|_| ())
     }
 }
 
